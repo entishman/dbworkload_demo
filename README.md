@@ -9,7 +9,7 @@ The user, by coding the class, has complete control of the workload flow: what t
 Database seeding
 dbworkload can help with seeding a database by creating CSV files with random generated data, whose definition is supplied in a YAML file and can be extracted from a DDL SQL file.
 
-Software requirements
+# Software requirements
 dbworkload requires at least Python 3.8 and the pip utility, installed and upgraded.
 
 dbworkload dependencies are installed automatically by the pip tool.
@@ -23,7 +23,7 @@ Driver documentation: Psycopg 3.
 # installation
 pip install dbworkload[postgres]
 
-Step 1 - init the workload
+# Step 1 - init the workload
 Make sure your CockroachDB cluster is up and running.
 
 Execute the DDL file, ad_DDL.sql, using the CockroachDB SQL client to create the database addb, and the table dly:
@@ -48,13 +48,13 @@ Using the CockroachDB SQL client, run the following query to import the CSV file
 
 IMPORT INTO addb.dly CSV DATA ('http://<<IP Address>>:3000/dly.0_0_0.csv') WITH delimiter = ',', nullif = '';
 
-Step 2 - Test Queries
+# Step 2 - Test Queries
 The following queries are defined in the addb.py file.
 
 SELECT count(*) FROM dly WHERE isdeleted<100000;
 INSERT INTO dly(user_login_id, end_customer_agreement_yr_ind) VALUES ('iam',3141);
 UPDATE dly SET end_customer_agreement_yr_ind=3141 WHERE isdeleted>950000;
 
-Step 3 - Run the workload
+# Step 3 - Run the workload
 
 clear;dbworkload run -w addb.py -c 1 --uri 'postgresql://tim:8pEuq9IFNUiOCAd3bwl3AA@trs-9n3r-northamerica-q9w.aws-ca-central-1.cockroachlabs.cloud:26257/addb?sslmode=verify-full&sslrootcert=/home/tim/Library/CockroachCloud/certs/1d4d68ed-a173-461e-a522-4fbca2b062e1/trs-9n3r-northamerica-ca.crt' -d 200 -i 200
