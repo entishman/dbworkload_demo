@@ -41,7 +41,8 @@ Now run the built-in Python server from the addb/ directory to serve the CSV fil
 cd addb/
 python3 -m http.server 3000
 
-If you are running the demo on AWS/EC2, make sure to open port 3000 
+If you are running the demo on AWS/EC2, make sure to open port 3000.
+
 If you open your browser at http://localhost:3000 you should see file dly.0_0_0.csv being served.
 
 Using the CockroachDB SQL client, run the following query to import the CSV file:
