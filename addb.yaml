@@ -1,0 +1,150 @@
+dly:
+ - count: 100
+   sort-by:
+     - id
+   columns:
+    id:
+     type: UUIDv4
+     args:
+      seed: 0
+      null_pct: 0
+    created_dt:
+     type: timestamp
+     args:
+      start: "1900-01-01"
+      end: "2022-12-31"
+      format: '%Y-%m-%d %H:%M:%S.%f'
+      seed: 0
+      null_pct: 0
+    created_by:
+     type: string
+     args:
+      min: 31
+      max: 32
+      prefix: created_by--
+      seed: 0
+    updated_dt:
+     type: timestamp
+     args:
+      start: "1900-01-01"
+      end: "2022-12-31"
+      format: '%Y-%m-%d %H:%M:%S.%f'
+      seed: 0
+      null_pct: 0
+    updated_by:
+     type: string
+     args:
+      min: 31
+      max: 32
+      prefix: updated_by--
+      seed: 0
+    agree_nbr:
+     type: string
+     args:
+      min: 24
+      max: 25
+      prefix: agree_nbr--
+    usage_dt:
+     type: timestamp
+     args:
+      start: "1900-01-01"
+      end: "2022-12-31"
+      format: '%Y-%m-%d %H:%M:%S.%f'
+      seed: 0
+      null_pct: 0
+    product_feature_id:
+     type: integer
+     args:
+      min: 1
+      max: 1000000
+      seed: 0
+      nul_pct: 0
+    service_cd:
+     type: string
+     args:
+      min: 49
+      max: 50
+      prefix: service_cd--
+    product_line_cd:
+     type: string
+     args:
+      min: 49
+      max: 50
+      prefix: product_line_cd--
+      array: 0
+    user_login_id:
+     type: string
+     args:
+      min: 255
+      max: 256
+      prefix: user_log_id--
+      array: 0
+    license_server_nm:
+     type: string
+     args:
+      min: 127
+      max: 128
+      prefix: license_server_nm--
+      array: 0
+    license_type_txt:
+     type: string
+     args:
+      min: 9
+      max: 10
+      prefix: license_type_txt--
+      array: 0
+    machine_nm:
+     type: string
+     args:
+      min: 127
+      max: 128
+      prefix: machine_nm--
+      array: 0
+    txn_type_nm:
+     type: string
+     args:
+      min: 29
+      max: 30
+      prefix: txn_type_nm--
+      array: 0
+    token_pool_cd:
+     type: string
+     args:
+      min: 1
+      max: 2
+      prefix: token_pool_cd--
+      array: 0
+    end_customer_agreement_yr_ind:
+     type: integer
+     args:
+      min: 1
+      max: 1000000
+      seed: 0
+      nul_pct: 0
+    duration_mns:
+     type: float
+     args:
+      min: 0
+      max: 1000000
+    txn_units_nbr:
+     type: float
+     args:
+      min: 0
+      max: 1000000
+    unique_usage_cnt:
+     type: integer
+     args:
+      min: 0
+      max: 1000000
+    isdeleted:
+     type: integer
+     args:
+      min: 0
+      max: 1000000
+    hashkey:
+     type: string
+     args:
+      min: 63
+      max: 64
+      prefix: hashkey--
+      array: 0
