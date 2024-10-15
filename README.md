@@ -43,11 +43,11 @@ python3 -m http.server 3000
 
 If you are running the demo on AWS/EC2, make sure to open port 3000.
 
-If you open your browser at http://localhost:3000 you should see file dly.0_0_0.csv being served.
+If you open your browser at http://<<External IP Address>>:3000 you should see file dly.0_0_0.csv being served.
 
 Using the CockroachDB SQL client, run the following query to import the CSV file:
 
-IMPORT INTO addb.dly CSV DATA ('http://<<IP Address>>:3000/dly.0_0_0.csv') WITH delimiter = ',', nullif = '';
+IMPORT INTO addb.dly CSV DATA ('http://<<External IP Address>>:3000/dly.0_0_0.csv') WITH delimiter = ',', nullif = '';
 
 # Step 2 - Test Queries
 The following queries are defined in the addb.py file.
